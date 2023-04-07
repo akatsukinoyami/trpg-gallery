@@ -9,7 +9,7 @@ class RelativeDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    description: Field::String,
+    description: Field::Text,
     name: Field::String,
     character: Field::BelongsTo.with_options(
       searchable: true,

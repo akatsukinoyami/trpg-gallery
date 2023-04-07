@@ -1,0 +1,61 @@
+en:
+  activerecord:
+    models:
+      character: Character  #g
+      item: Item  #g
+      relative: Relative  #g
+      skill: Skill  #g
+      user: User  #g
+
+    attributes:
+      character:
+        age: Age  #g
+        attitude_gods: Attitude to Gods  #g
+        attitude_magic: Attitude to Magic  #g
+        attitude_races: Attitude to other races  #g
+        attitude_tech: Attitude to Tech  #g
+        avatar: Avatar  #g
+        bloodiness: Bloodiness  #g
+        charisma: Charisma  #g
+        constitution: Constitution  #g
+        dexterity: Dexterity  #g
+        intelligence: Intelligence  #g
+        items: Items  #g
+        lewdness: Lewdness  #g
+        max_health: Max health  #g
+        max_mana: Max mana  #g
+        name: Name  #g
+        problem_solving_method: Problem solving method  #g
+        race: Race  #g
+        relatives: Relatives  #g
+        skills: Skills  #g
+        strength: Strength  #g
+        user: :activerecord.models.user  #g
+        wisdom: Wisdom  #g
+
+      item:
+        character: :activerecord.models.character  #g
+        cost: Cost  #g
+        description: Description  #g
+        kind: Kind  #g
+        name: Name  #g
+
+      relative:
+        character: :activerecord.models.character  #g
+        description: Description  #g
+        name: Name  #g
+
+      skill:
+        character: :activerecord.models.character  #g
+        cost: Cost  #g
+        description: Description  #g
+        kind: Kind  #g
+        name: Name  #g
+
+      user:
+        avatar: Avatar  #g
+        characters: Characters  #g
+        crypted_password: Crypted password  #g
+        email: Email  #g
+        salt: Salt  #g
+        username: Username  #g

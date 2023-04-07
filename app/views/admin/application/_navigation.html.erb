@@ -18,8 +18,8 @@ as defined by the routes in the `admin/` namespace
   </nav>
 
   <div class="log-menu">
-    Hello, <%= link_to current_user.username, admin_user_path(current_user.id), class: "username" %>!
-    <%= link_to 'Logout', logout_path, class: 'button mt-1' %>
+    <%= I18n.t('message.hello') %>, <%= link_to current_user.username, admin_user_path(current_user.id), class: "username" %>!
+    <%= link_to I18n.t('message.logout'), logout_path, class: 'button mt-1' %>
   </div>
 </div>
 

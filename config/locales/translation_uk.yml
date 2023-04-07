@@ -1,0 +1,72 @@
+uk:
+  activerecord:
+    models:
+      character: Персонаж  #g
+      item: Предмет  #g
+      relative: Відносна  #g
+      skill: Навичка  #g
+      user: Користувач  #g
+
+    attributes:
+      character:
+        age: Вік  #g
+        attitude_gods: Ставлення до богів  #g
+        attitude_magic: Ставлення до Магії  #g
+        attitude_races: Ставлення до інших рас  #g
+        attitude_tech: Ставлення до Технологій  #g
+        avatar: Аватар  #g
+        bloodiness: Кривавість  #g
+        charisma: Харизма  #g
+        constitution: Конституція  #g
+        dexterity: Спритність  #g
+        intelligence: Інтелект  #g
+        items: Предмети  #g
+        lewdness: Розпусність  #g
+        max_health: Макс здоров'я  #g
+        max_mana: Макс мани  #g
+        name: Ім'я  #g
+        problem_solving_method: Метод розв’язування задач  #g
+        race: Гонка  #g
+        relatives: Зв'язки  #g
+        skills: Навички  #g
+        strength: Сила  #g
+        user: :activerecord.models.user  #g
+        wisdom: Мудрість  #g
+
+      item:
+        character: :activerecord.models.character  #g
+        cost: Вартість  #g
+        description: Опис  #g
+        kind: Тип  #g
+        kinds:
+          money: Гроші
+          item: Предмет
+          weapon: Зброя
+          artifact: Артифакт
+        name: Ім'я  #g
+
+      relative:
+        character: :activerecord.models.character  #g
+        description: опис  #g
+        name: Ім'я  #g
+
+      skill:
+        character: :activerecord.models.character  #g
+        cost: Вартість  #g
+        description: Опис  #g
+        kind: Тип  #g
+        kinds:
+          race: Расовий
+          physical: Физичний
+          magical: Магічний
+        name: Ім'я  #g
+
+      user:
+        avatar: Аватар  #g
+        characters: Персонажі  #g
+        password: Пароль
+        password_confirmation: Підтвердження паролю
+        crypted_password: Зашифрований пароль  #g
+        email: Електронна пошта  #g
+        salt: сіль  #g
+        username: Ім'я користувача  #g

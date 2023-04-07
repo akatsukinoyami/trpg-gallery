@@ -10,7 +10,7 @@ class SkillDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     cost: Field::Number,
-    description: Field::String,
+    description: Field::Text,
     name: Field::String,
     kind: Field::Enum,
     character: Field::BelongsTo.with_options(

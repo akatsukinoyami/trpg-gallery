@@ -1,0 +1,72 @@
+ru:
+  activerecord:
+    models:
+      character: Персонаж  #g
+      item: Предмет  #g
+      relative: Связь  #g
+      skill: Навык  #g
+      user: Пользователь  #g
+
+    attributes:
+      character:
+        age: Возраст  #g
+        attitude_gods: Отношение к Богам   #g
+        attitude_magic: Отношение к Магии  #g
+        attitude_races: Отношение к другим расам  #g
+        attitude_tech: Отношение к Технологиям  #g
+        avatar: Аватар  #g
+        bloodiness: Кровожадность  #g
+        charisma: Харизма  #g
+        constitution: Конституция  #g
+        dexterity: Ловкость  #g
+        intelligence: Интеллект  #g
+        items: Предметы  #g
+        lewdness: Пошлость  #g
+        max_health: Макс. здоровье  #g
+        max_mana: Макс. мана  #g
+        name: Имя  #g
+        problem_solving_method: Метод решения проблем  #g
+        race: Раса  #g
+        relatives: Родственники  #g
+        skills: Навыки  #g
+        strength: Сила  #g
+        user: :activerecord.models.user  #g
+        wisdom: Мудрость  #g
+
+      item:
+        character: :activerecord.models.character  #g
+        cost: Цена  #g
+        description: Описание  #g
+        kind: Тип  #g
+        kinds:
+          money: Деньги
+          item: Предмет
+          weapon: Оружие
+          artifact: Артифакт
+        name: Имя  #g
+
+      relative:
+        character: :activerecord.models.character  #g
+        description: Описание  #g
+        name: Имя  #g
+
+      skill:
+        character: :activerecord.models.character  #g
+        cost: Расход  #g
+        description: Описание  #g
+        kind: Тип  #g
+        kinds:
+          race: Расовый
+          physical: Физический
+          magical: Магический
+        name: Имя  #g
+
+      user:
+        avatar: Аватар  #g
+        characters: Персонажи  #g
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        crypted_password: Зашифрованный пароль  #g
+        email: Электронная почта  #g
+        salt: Соль  #g
+        username: Имя пользователя  #g

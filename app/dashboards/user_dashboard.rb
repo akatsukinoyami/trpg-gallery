@@ -10,12 +10,11 @@ class UserDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     characters: Field::HasMany,
-    crypted_password: Field::String,
-    email: Field::String,
+    email: Field::Email,
     salt: Field::String,
     username: Field::String,
-    password: Field::String,
-    password_confirmation: Field::String,
+    password: Field::Password,
+    password_confirmation: Field::Password,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     avatar: Field::Carrierwave.with_options(
