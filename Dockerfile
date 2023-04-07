@@ -3,9 +3,9 @@ FROM ruby:2.7.2-alpine
 RUN mkdir app
 WORKDIR /app
 
-RUN apk --update --upgrade \
-    add postgresql-dev build-base \
-    xz-dev libc6-compat yarn \
+RUN apk --update --upgrade add \
+    postgresql-dev build-base xz-dev \
+    libc6-compat yarn imagemagick \
     && rm -rf /var/cache/apk/*
 RUN gem install bundler
 
