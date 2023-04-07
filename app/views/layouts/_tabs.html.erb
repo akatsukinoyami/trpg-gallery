@@ -1,0 +1,76 @@
+<div class="wrapper">
+  <div class="tabs">
+    <%= yield %>
+  </div>
+</div>
+
+<style>
+  .wrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .tabs {
+    position: relative;
+    margin: 3rem 0;
+    height: 14.75rem;
+  }
+  .tabs::before,
+  .tabs::after {
+    content: "";
+    display: table;
+  }
+  .tabs::after {
+    clear: both;
+  }
+  .tab {
+    float: left;
+    width: 20%;
+  }
+  .tab-switch {
+    display: none;
+  }
+  .tab-label {
+    position: relative;
+    display: block;
+    line-height: 2.75em;
+    height: 3em;
+    padding: 0 1.618em;
+    background: #fff;
+    box-shadow: 0 1px 3px #13599e;
+    color: #293f54;
+    cursor: pointer;
+    top: 0;
+    transition: all 0.25s;
+    border-radius: 4px;
+  }
+  .tab-label:hover {
+    top: -0.25rem;
+    transition: top 0.25s;
+  }
+  .tab-content {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 2.75em;
+    left: 0;
+    padding: 1.618rem;
+    color: #2c3e50;
+    opacity: 0;
+    transition: all 0.35s;
+  }
+  .tab-switch:checked + .tab-label {
+    background: #1976d2;
+    color: #fff;
+    border-bottom: 0;
+    border-radius: 4px;
+    transition: all 0.35s;
+    z-index: 1;
+    top: -0.0625rem;
+    box-shadow: 0 1px 3px #13599e;
+  }
+  .tab-switch:checked + label + .tab-content {
+    z-index: 2;
+    opacity: 1;
+    transition: all 0.35s;
+  }
+</style>

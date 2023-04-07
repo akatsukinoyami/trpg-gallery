@@ -41,17 +41,18 @@ as well as a link to its edit page.
 </header>
 
 <section class="main-content__body">
-  <dl>
-    <% page.attributes.each do |attribute| %>
-      <dt class="attribute-label" id="<%= attribute.name %>">
-      <%= t(
-        "helpers.label.#{resource_name}.#{attribute.name}",
-        default: page.resource.class.human_attribute_name(attribute.name),
-      ) %>
-      </dt>
-
-      <dd class="attribute-data attribute-data--<%=attribute.html_class%>"
-          ><%= render_field attribute, page: page %></dd>
+  <% tabs = {
+    'main': %i[user name age race max_health max_mana strength constitution dexterity intelligence wisdom charisma avatar created_at updated_at],
+    'detailed': %i[biography appearance views],
+    'items': %i[items properties],
+    'skills': %i[skills],
+    'relatives': %i[relatives]
+  } %>
+  <%= render layout: 'layouts/tabs' do %>
+    <% tabs.each_with_index do |(tab_name, attributes), i| %>
+      <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", checked: i == 0, name: tab_name.capitalize, radio_name: 'radio_name' } do %>
+        <%= render partial: 'layouts/property_list', locals: { attributes: attributes, page: page } %>
+      <% end %>
     <% end %>
-  </dl>
+  <% end %>
 </section>
