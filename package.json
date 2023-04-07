@@ -1,0 +1,9 @@
+{
+  "name": "char_store",
+  "private": true,
+  "dependencies": {},
+  "version": "0.1.0",
+  "devDependencies": {
+    "webpack-dev-server": "^4.13.2"
+  }
+}

@@ -1,0 +1,38 @@
+<%#
+# Navigation
+
+This partial is used to display the navigation in Administrate.
+By default, the navigation contains navigation links
+for all resources in the admin dashboard,
+as defined by the routes in the `admin/` namespace
+%>
+<div class="nav-aside">
+  <nav class="navigation" role="navigation">
+    <% Administrate::Namespace.new(namespace).resources_with_index_route.each do |resource| %>
+      <%= link_to(
+        display_resource_name(resource),
+        resource_index_route(resource),
+        class: "navigation__link navigation__link--#{nav_link_state(resource)}"
+      ) if accessible_action?(model_from_resource(resource), :index) %>
+    <% end %>
+  </nav>
+
+  <div class="log-menu">
+    Hello, <%= link_to current_user.username, admin_user_path(current_user.id) %>!
+    <%= link_to 'Logout', logout_path, class: 'button mt-1' %>
+  </div>
+</div>
+
+<style>
+  .nav-aside {
+    display: flex;
+    flex-direction: column;
+    justify-items: space-between;
+  }
+  .mt-1 {
+    margin-top: 10px;
+  }
+  .navigation__link {
+    text-decoration: none;
+  }
+</style>
