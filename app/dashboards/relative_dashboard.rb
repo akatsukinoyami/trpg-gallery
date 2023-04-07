@@ -14,6 +14,7 @@ class RelativeDashboard < Administrate::BaseDashboard
     character: Field::BelongsTo.with_options(
       searchable: true,
       searchable_fields: ['name'],
+      scope: -> { Character.where(user: Current.user) }
     ),
   }.freeze
 

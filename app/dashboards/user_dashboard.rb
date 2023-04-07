@@ -21,8 +21,8 @@ class UserDashboard < Administrate::BaseDashboard
     avatar: Field::Carrierwave.with_options(
       image: :m,
       multiple: false,
-      remove: true,
-      remote_url: true
+      remove: false,
+      remote_url: false
     )
   }.freeze
 

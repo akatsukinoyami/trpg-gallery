@@ -14,5 +14,9 @@ module Admin
     #   params[:per_page] || 20
     # end
 
+    def require_login
+      super
+      Current.user = current_user
+    end
   end
 end

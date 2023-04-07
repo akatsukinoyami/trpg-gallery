@@ -40,7 +40,7 @@ class CharacterDashboard < Administrate::BaseDashboard
       image: :m,
       multiple: false,
       remove: false,
-      remote_url: true
+      remote_url: false
     )
   }.freeze
 
