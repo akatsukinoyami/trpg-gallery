@@ -10,4 +10,7 @@ class User < ApplicationRecord
   has_many :characters
 
   mount_uploader :avatar, AvatarUploader
+
+  enum lang: { en: 0, ru: 1, uk: 2 }
+
 end

@@ -17,6 +17,7 @@ class UserDashboard < Administrate::BaseDashboard
     password_confirmation: Field::Password,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    lang: Field::Enum,
     avatar: Field::Carrierwave.with_options(
       image: :m,
       multiple: false,
@@ -58,6 +59,7 @@ class UserDashboard < Administrate::BaseDashboard
     email
     characters
     avatar
+    lang
   ].freeze
 
   # COLLECTION_FILTERS

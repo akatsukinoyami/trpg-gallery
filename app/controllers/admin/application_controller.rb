@@ -17,6 +17,7 @@ module Admin
     def require_login
       super
       Current.user = current_user
+      I18n.locale = current_user.lang
     end
   end
 end

@@ -59,3 +59,8 @@ en:
         email: Email  #g
         salt: Salt  #g
         username: Username  #g
+        lang: Language
+        langs:
+          en: English
+          ru: Russian
+          uk: Ukrainian
