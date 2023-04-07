@@ -4,6 +4,7 @@ uk:
       character: Персонаж  #g
       item: Предмет  #g
       relative: Відносна  #g
+      property: Майно
       skill: Навичка  #g
       user: Користувач  #g
 
@@ -23,12 +24,14 @@ uk:
         max_health: Макс здоров'я  #g
         max_mana: Макс мани  #g
         name: Ім'я  #g
-        race: Гонка  #g
+        race: Раса  #g
         relatives: Зв'язки  #g
         skills: Навички  #g
         strength: Сила  #g
         user: :activerecord.models.user  #g
         wisdom: Мудрість  #g
+        created_at: Створено
+        updated_at: Оновлено
 
       item:
         character: :activerecord.models.character  #g

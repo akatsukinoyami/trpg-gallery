@@ -4,6 +4,7 @@ en:
       character: Character  #g
       item: Item  #g
       relative: Relative  #g
+      property: Property
       skill: Skill  #g
       user: User  #g
 
@@ -29,6 +30,8 @@ en:
         strength: Strength  #g
         user: :activerecord.models.user  #g
         wisdom: Wisdom  #g
+        created_at: Created at
+        updated_at: Updated at
 
       item:
         character: :activerecord.models.character  #g

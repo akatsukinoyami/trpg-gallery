@@ -4,6 +4,7 @@ ru:
       character: Персонаж  #g
       item: Предмет  #g
       relative: Связь  #g
+      property: Имущество
       skill: Навык  #g
       user: Пользователь  #g
 
@@ -29,6 +30,8 @@ ru:
         strength: Сила  #g
         user: :activerecord.models.user  #g
         wisdom: Мудрость  #g
+        created_at: Создано
+        updated_at: Обновлено
 
       item:
         character: :activerecord.models.character  #g
