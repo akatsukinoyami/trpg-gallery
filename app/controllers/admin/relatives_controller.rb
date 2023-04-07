@@ -49,14 +49,14 @@ module Admin
     def check_self
       entity = model.find_by(id: params[:id].to_i)
       unless entity.character.user.id == current_user.id
-        redirect_back_or_to admin_characters_path, notice: "Only can edit/delete your char's #{model.name.lowercase}"
+        redirect_back_or_to admin_characters_path, notice: "Only can edit/delete your char's #{model.name.downcase}"
       end
     end
 
     def check_create
       char = Character.find_by(id: params[:relative][:character_id].to_i)
       unless current_user.id == char.user.id
-        redirect_back_or_to admin_characters_path, notice: "Only can create #{model.name.lowercase} for own character"
+        redirect_back_or_to admin_characters_path, notice: "Only can create #{model.name.downcase} for own character"
       end
     end
 
