@@ -10,10 +10,9 @@ gem 'sass-rails', '>= 6'              # Use SCSS for stylesheets
 gem 'jbuilder', '~> 2.7'              # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'bcrypt', '~> 3.1.7'            # Use Active Model has_secure_password
 gem 'bootsnap', '>= 1.4.2', require: false # Reduces boot times through caching; required in config/boot.rb
-
-gem "administrate", "~> 0.18.0"
-
-gem "sorcery", "~> 0.16.4"
+gem "administrate", "~> 0.18.0"       # administartive dashboards
+gem "sorcery", "~> 0.16.4"            # simple auth
+gem "carrierwave", "~> 2.2"           # easy storing files
 
 group :development, :test do
     gem 'byebug', platforms: [:mri, :mingw, :x64_mingw] # Call 'byebug' anywhere in the code to stop execution and get a debugger console
