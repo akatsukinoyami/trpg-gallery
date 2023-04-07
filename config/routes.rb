@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :items
     resources :relatives
     resources :skills
-    resources :users
+    resources :users, except: :index
 
     root to: "characters#index"
   end
