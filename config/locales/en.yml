@@ -1,5 +1,9 @@
 ---
 en:
+  administrate:
+    actions:
+      destroy: ⌫
+      edit: ✎
   activerecord:
     errors:
       messages:
