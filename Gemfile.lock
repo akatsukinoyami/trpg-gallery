@@ -69,6 +69,8 @@ GEM
     administrate-field-carrierwave (0.5.0)
       administrate (< 1.0.0)
       rails (>= 4.2, < 7)
+    administrate-field-enum (0.0.9)
+      administrate (~> 0.12)
     bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.16.0)
@@ -257,6 +259,7 @@ PLATFORMS
 DEPENDENCIES
   administrate (~> 0.18.0)
   administrate-field-carrierwave (~> 0.5.0)
+  administrate-field-enum (~> 0.0.9)
   bootsnap (>= 1.4.2)
   byebug
   carrierwave (~> 2.2)

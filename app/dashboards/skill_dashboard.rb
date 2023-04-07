@@ -12,6 +12,7 @@ class SkillDashboard < Administrate::BaseDashboard
     cost: Field::Number,
     description: Field::String,
     name: Field::String,
+    kind: Field::Enum,
     character: Field::BelongsTo.with_options(
       searchable: true,
       searchable_fields: ['name'],
@@ -25,6 +26,7 @@ class SkillDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
+    kind
     name
     description
     cost
@@ -35,8 +37,9 @@ class SkillDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     name
-    description
+    kind
     cost
+    description
     character
     id
   ].freeze
@@ -46,8 +49,9 @@ class SkillDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     name
-    description
+    kind
     cost
+    description
     character
   ].freeze
 

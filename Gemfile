@@ -14,6 +14,7 @@ gem "administrate", "~> 0.18.0"       # administartive dashboards
 gem "sorcery", "~> 0.16.4"            # simple auth
 gem "carrierwave", "~> 2.2"           # easy storing files
 gem "administrate-field-carrierwave", "~> 0.5.0"
+gem "administrate-field-enum",        "~> 0.0.9"
 
 group :development, :test do
     gem 'byebug', platforms: [:mri, :mingw, :x64_mingw] # Call 'byebug' anywhere in the code to stop execution and get a debugger console
