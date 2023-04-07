@@ -36,6 +36,12 @@ class CharacterDashboard < Administrate::BaseDashboard
       searchable: true,
       searchable_fields: ['username'],
     ),
+    avatar: Field::Carrierwave.with_options(
+      image: :m,
+      multiple: false,
+      remove: false,
+      remote_url: true
+    )
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -44,6 +50,7 @@ class CharacterDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
+    avatar
     name
     age
     race
@@ -81,6 +88,7 @@ class CharacterDashboard < Administrate::BaseDashboard
     id
     created_at
     updated_at
+    avatar
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -109,6 +117,7 @@ class CharacterDashboard < Administrate::BaseDashboard
     skills
     items
     relatives
+    avatar
   ].freeze
 
   # COLLECTION_FILTERS

@@ -18,6 +18,12 @@ class UserDashboard < Administrate::BaseDashboard
     password_confirmation: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    avatar: Field::Carrierwave.with_options(
+      image: :m,
+      multiple: false,
+      remove: true,
+      remote_url: true
+    )
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -26,6 +32,7 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
+    avatar
     username
     email
   ].freeze
@@ -39,6 +46,7 @@ class UserDashboard < Administrate::BaseDashboard
     characters
     created_at
     updated_at
+    avatar
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -50,6 +58,7 @@ class UserDashboard < Administrate::BaseDashboard
     password_confirmation
     email
     characters
+    avatar
   ].freeze
 
   # COLLECTION_FILTERS

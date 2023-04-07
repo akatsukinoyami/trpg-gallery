@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   has_many :characters
+
+  mount_uploader :avatar, AvatarUploader
 end

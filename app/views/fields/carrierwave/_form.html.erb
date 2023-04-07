@@ -1,0 +1,39 @@
+<%#
+# Carrierwave Form Partial
+This partial renders a file input field and a summary of the current
+attachment(s) for this attribute
+## Local variables:
+- `f`:
+  A Rails form generator, used to help create the appropriate input fields.
+- `field`:
+  An instance of Administrate::Field::Carrierwave.
+  A wrapper around the attribute pulled from the database.
+%>
+
+<div class="field-unit__label">
+  <%= f.label field.attribute %>
+</div>
+<div class="field-unit__field is-flex">
+  <%= render 'fields/carrierwave/show', field: field %>
+  <div class="editable">
+    <%= f.file_field field.attribute, multiple: field.multiple? %>
+    <%= f.text_field "remote_#{field.attribute}_url", placeholder: "Remote URL" if field.remote_url? %>
+    <%= f.label "remove_#{field.attribute}" do %>
+      <%= f.check_box "remove_#{field.attribute}" %> Remove <%= field.attribute %>
+    <% end if field.remove? %>
+  </div>
+</div>
+
+<style>
+  .is-flex {
+    display: flex;
+  }
+
+  .editable {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px;
+  }
+</style>

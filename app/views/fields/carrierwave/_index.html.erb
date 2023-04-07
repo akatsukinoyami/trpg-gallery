@@ -1,0 +1,16 @@
+<%#
+# Carrierwave Index Partial
+This partial renders the URL of the attachment as a link that
+opens in a new window/tab, or the total number of attached files
+## Local variables:
+- `field`:
+  An instance of Administrate::Field::Carrierwave.
+  A wrapper around the attribute pulled from the database.
+%>
+<% if field.multiple? %>
+  <%= pluralize(field.files.size, field.attribute.to_s.humanize.downcase) %>
+<% elsif field.file.present? %>
+  <%= image_tag field.file.s.url %>
+<% else %>
+  -
+<% end %>
