@@ -10,22 +10,19 @@ en:
     attributes:
       character:
         age: Age  #g
-        attitude_gods: Attitude to Gods  #g
-        attitude_magic: Attitude to Magic  #g
-        attitude_races: Attitude to other races  #g
-        attitude_tech: Attitude to Tech  #g
+        biography: Biography
+        appearance: Appearance
+        views: Views
+        properties: Properties
         avatar: Avatar  #g
-        bloodiness: Bloodiness  #g
         charisma: Charisma  #g
         constitution: Constitution  #g
         dexterity: Dexterity  #g
         intelligence: Intelligence  #g
         items: Items  #g
-        lewdness: Lewdness  #g
         max_health: Max health  #g
         max_mana: Max mana  #g
         name: Name  #g
-        problem_solving_method: Problem solving method  #g
         race: Race  #g
         relatives: Relatives  #g
         skills: Skills  #g
@@ -37,7 +34,14 @@ en:
         character: :activerecord.models.character  #g
         cost: Cost  #g
         description: Description  #g
-        kind: Kind  #g
+        kind: Type  #g
+        name: Name  #g
+
+      property:
+        character: :activerecord.models.character  #g
+        cost: Cost  #g
+        description: Description  #g
+        kind: Type  #g
         name: Name  #g
 
       relative:
@@ -49,7 +53,7 @@ en:
         character: :activerecord.models.character  #g
         cost: Cost  #g
         description: Description  #g
-        kind: Kind  #g
+        kind: Type  #g
         name: Name  #g
 
       user:
@@ -64,3 +68,9 @@ en:
           en: English
           ru: Russian
           uk: Ukrainian
+  tabs:
+    main: Main
+    detailed: Detailed
+    items: Items
+    skills: Skills
+    relatives: Relatives

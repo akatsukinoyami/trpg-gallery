@@ -10,22 +10,19 @@ uk:
     attributes:
       character:
         age: Вік  #g
-        attitude_gods: Ставлення до богів  #g
-        attitude_magic: Ставлення до Магії  #g
-        attitude_races: Ставлення до інших рас  #g
-        attitude_tech: Ставлення до Технологій  #g
+        biography: Біографія
+        appearance: Зовнішність
+        views: Погляди
+        properties: Майно
         avatar: Аватар  #g
-        bloodiness: Кривавість  #g
         charisma: Харизма  #g
         constitution: Конституція  #g
         dexterity: Спритність  #g
         intelligence: Інтелект  #g
         items: Предмети  #g
-        lewdness: Розпусність  #g
         max_health: Макс здоров'я  #g
         max_mana: Макс мани  #g
         name: Ім'я  #g
-        problem_solving_method: Метод розв’язування задач  #g
         race: Гонка  #g
         relatives: Зв'язки  #g
         skills: Навички  #g
@@ -43,7 +40,18 @@ uk:
           item: Предмет
           weapon: Зброя
           artifact: Артифакт
-        name: Ім'я  #g
+        name: Назва  #g
+
+      property:
+        character: :activerecord.models.character  #g
+        cost: Вартість  #g
+        description: Опис  #g
+        kind: Тип  #g
+        kinds:
+          transport: Транспорт
+          real_estate: Нерухомість
+          moveable: Переносне
+        name: Назва  #g
 
       relative:
         character: :activerecord.models.character  #g
@@ -59,7 +67,7 @@ uk:
           race: Расовий
           physical: Физичний
           magical: Магічний
-        name: Ім'я  #g
+        name: Назва  #g
 
       user:
         avatar: Аватар  #g
@@ -75,3 +83,10 @@ uk:
           en: Англійська
           ru: Російська
           uk: Українська
+
+  tabs:
+    main: Головна
+    detailed: Деталі
+    items: Майно
+    skills: Навички
+    relatives: Зв'язки

@@ -10,22 +10,19 @@ ru:
     attributes:
       character:
         age: Возраст  #g
-        attitude_gods: Отношение к Богам   #g
-        attitude_magic: Отношение к Магии  #g
-        attitude_races: Отношение к другим расам  #g
-        attitude_tech: Отношение к Технологиям  #g
+        biography: Биография
+        appearance: Внешность
+        views: Взгляды
+        properties: Имущество
         avatar: Аватар  #g
-        bloodiness: Кровожадность  #g
         charisma: Харизма  #g
         constitution: Конституция  #g
         dexterity: Ловкость  #g
         intelligence: Интеллект  #g
         items: Предметы  #g
-        lewdness: Пошлость  #g
         max_health: Макс. здоровье  #g
         max_mana: Макс. мана  #g
         name: Имя  #g
-        problem_solving_method: Метод решения проблем  #g
         race: Раса  #g
         relatives: Родственники  #g
         skills: Навыки  #g
@@ -43,7 +40,18 @@ ru:
           item: Предмет
           weapon: Оружие
           artifact: Артифакт
-        name: Имя  #g
+        name: Название  #g
+
+      property:
+        character: :activerecord.models.character  #g
+        cost: Цена  #g
+        description: Описание  #g
+        kind: Тип  #g
+        kinds:
+          transport: Транспорт
+          real_estate: Недвижимость
+          moveable: Переносное
+        name: Название  #g
 
       relative:
         character: :activerecord.models.character  #g
@@ -59,7 +67,7 @@ ru:
           race: Расовый
           physical: Физический
           magical: Магический
-        name: Имя  #g
+        name: Название  #g
 
       user:
         avatar: Аватар  #g
@@ -75,3 +83,10 @@ ru:
           en: Английский
           ru: Русский
           uk: Украинский
+
+  tabs:
+    main: Главная
+    detailed: Детали
+    items: Имущество
+    skills: Навыки
+    relatives: Связи
