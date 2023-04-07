@@ -9,29 +9,31 @@ class CharacterDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    name: Field::String,
     age: Field::Number,
-    attitude_gods: Field::Text,
-    attitude_magic: Field::Text,
-    attitude_races: Field::Text,
-    attitude_tech: Field::Text,
-    bloodiness: Field::Number,
-    charisma: Field::Number,
+    race: Field::String,
+    max_health: Field::Number,
+    max_mana: Field::Number,
+
+    strength: Field::Number,
     constitution: Field::Number,
     dexterity: Field::Number,
     intelligence: Field::Number,
-    items: Field::HasMany,
-    lewdness: Field::Number,
-    max_health: Field::Number,
-    max_mana: Field::Number,
-    name: Field::String,
-    problem_solving_method: Field::Text,
-    race: Field::String,
-    relatives: Field::HasMany,
-    skills: Field::HasMany,
-    strength: Field::Number,
     wisdom: Field::Number,
+    charisma: Field::Number,
+
+    biography: Field::Text,
+    appearance: Field::Text,
+    views: Field::Text,
+
+    relatives: Field::HasMany,
+    items: Field::HasMany,
+    properties: Field::HasMany,
+    skills: Field::HasMany,
+
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+
     user: Field::BelongsTo.with_options(
       searchable: true,
       searchable_fields: ['username'],
@@ -66,23 +68,23 @@ class CharacterDashboard < Administrate::BaseDashboard
     name
     age
     race
-    lewdness
-    bloodiness
     max_health
     max_mana
-    attitude_gods
-    attitude_magic
-    attitude_races
-    attitude_tech
-    problem_solving_method
+
+    biography
+    appearance
+    views
+
     strength
     constitution
     dexterity
     intelligence
     wisdom
     charisma
+
     skills
     items
+    properties
     relatives
 
     id
@@ -99,24 +101,25 @@ class CharacterDashboard < Administrate::BaseDashboard
     name
     age
     race
-    lewdness
-    bloodiness
     max_health
     max_mana
-    attitude_gods
-    attitude_magic
-    attitude_races
-    attitude_tech
-    problem_solving_method
+
     strength
     constitution
     dexterity
     intelligence
     wisdom
     charisma
+
+    biography
+    appearance
+    views
+
     skills
     items
+    properties
     relatives
+
     avatar
   ].freeze
 

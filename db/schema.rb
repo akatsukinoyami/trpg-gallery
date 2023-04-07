@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_07_134825) do
+ActiveRecord::Schema.define(version: 2023_04_07_194939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,13 +21,9 @@ ActiveRecord::Schema.define(version: 2023_04_07_134825) do
     t.integer "age"
     t.integer "max_health"
     t.integer "max_mana"
-    t.text "attitude_gods"
-    t.text "attitude_magic"
-    t.text "attitude_tech"
-    t.text "attitude_races"
-    t.text "problem_solving_method"
-    t.integer "lewdness"
-    t.integer "bloodiness"
+    t.text "biography"
+    t.text "appearance"
+    t.text "views"
     t.integer "strength"
     t.integer "constitution"
     t.integer "dexterity"
@@ -48,6 +44,14 @@ ActiveRecord::Schema.define(version: 2023_04_07_134825) do
     t.bigint "character_id"
     t.integer "kind", default: 0
     t.index ["character_id"], name: "index_items_on_character_id"
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "cost"
+    t.bigint "character_id"
+    t.index ["character_id"], name: "index_properties_on_character_id"
   end
 
   create_table "relatives", force: :cascade do |t|
@@ -74,6 +78,7 @@ ActiveRecord::Schema.define(version: 2023_04_07_134825) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "avatar"
+    t.integer "lang", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

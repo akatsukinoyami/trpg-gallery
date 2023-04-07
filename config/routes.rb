@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  resources :properties
   namespace :admin do
     resources :characters
     resources :items
+    resources :properties
     resources :relatives
     resources :skills
     resources :users, except: :index
