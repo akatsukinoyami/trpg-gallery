@@ -7,6 +7,7 @@ en:
       property: Property
       skill: Skill  #g
       user: User  #g
+      session: Session
 
     attributes:
       character:
@@ -71,6 +72,12 @@ en:
           en: English
           ru: Russian
           uk: Ukrainian
+
+      session:
+        user: GM
+        title: Title
+        description: Description  #g
+
   tabs:
     main: Main
     detailed: Detailed

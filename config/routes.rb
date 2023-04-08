@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :relatives
     resources :skills
     resources :users
+    resources :sessions
 
     root to: "characters#index"
   end

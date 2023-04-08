@@ -7,6 +7,7 @@ ru:
       property: Имущество
       skill: Навык  #g
       user: Пользователь  #g
+      session: Сессия
 
     attributes:
       character:
@@ -86,6 +87,11 @@ ru:
           en: Английский
           ru: Русский
           uk: Украинский
+
+      session:
+        user: ГМ
+        title: Название
+        description: Описание
 
   tabs:
     main: Главная
