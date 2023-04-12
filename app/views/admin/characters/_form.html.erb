@@ -45,7 +45,7 @@ and renders all form fields for a resource's editable attributes.
     <% end %>
 
     <% tab_name = 'items' %>
-    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", checked: false, name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
+    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
       <%= render partial: 'layouts/tab_form', locals: { attr_name: :items, page: page, f: f } %>
       <%= render partial: 'layouts/tab_form', locals: { attr_name: :properties, page: page, f: f } %>
 
@@ -53,13 +53,13 @@ and renders all form fields for a resource's editable attributes.
     <% end %>
 
     <% tab_name = 'skills' %>
-    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", checked: false, name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
+    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
       <%= render partial: 'layouts/tab_form', locals: { attr_name: :skills, page: page, f: f } %>
       <div class="form-actions"> <%= f.submit %> </div>
     <% end %>
 
     <% tab_name = 'relatives' %>
-    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", checked: false, name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
+    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
       <%= render partial: 'layouts/tab_form', locals: { attr_name: :relatives, page: page, f: f } %>
       <div class="form-actions"> <%= f.submit %> </div>
     <% end %>
