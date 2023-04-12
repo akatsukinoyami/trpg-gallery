@@ -33,13 +33,36 @@ and renders all form fields for a resource's editable attributes.
     </div>
   <% end %>
 
-  <% page.attributes(controller.action_name).each do |attribute| -%>
-    <div class="field-unit field-unit--<%= attribute.html_class %> field-unit--<%= requireness(attribute) %>">
-      <%= render_field attribute, f: f %>
-    </div>
-  <% end -%>
+  <%= render layout: 'layouts/tabs' do %>
+    <% {
+      'main': %i[user name age race max_health max_mana strength constitution dexterity intelligence wisdom charisma avatar created_at updated_at],
+      'detailed': %i[biography appearance views]
+    }.each_with_index do |(tab_name, attributes), i| %>
+      <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", checked: i == 0, name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
+        <%= render partial: 'layouts/tab_form_list', locals: { attributes: attributes, page: page, f: f } %>
+        <div class="form-actions"> <%= f.submit %> </div>
+      <% end %>
+    <% end %>
 
-  <div class="form-actions">
-    <%= f.submit %>
-  </div>
+    <% tab_name = 'items' %>
+    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", checked: false, name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
+      <%= render partial: 'layouts/tab_form', locals: { attr_name: :items, page: page, f: f } %>
+      <%= render partial: 'layouts/tab_form', locals: { attr_name: :properties, page: page, f: f } %>
+
+      <div class="form-actions"> <%= f.submit %> </div>
+    <% end %>
+
+    <% tab_name = 'skills' %>
+    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", checked: false, name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
+      <%= render partial: 'layouts/tab_form', locals: { attr_name: :skills, page: page, f: f } %>
+      <div class="form-actions"> <%= f.submit %> </div>
+    <% end %>
+
+    <% tab_name = 'relatives' %>
+    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", checked: false, name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
+      <%= render partial: 'layouts/tab_form', locals: { attr_name: :relatives, page: page, f: f } %>
+      <div class="form-actions"> <%= f.submit %> </div>
+    <% end %>
+  <% end %>
+
 <% end %>

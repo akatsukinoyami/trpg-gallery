@@ -1,0 +1,4 @@
+<% attribute = page.attributes.find { |a| a.attribute == attr_name } %>
+<div class="field-unit field-unit--<%= attribute.html_class %> field-unit--<%= requireness(attribute) %>">
+  <%= render_field attribute, f: f %>
+</div>

@@ -1,0 +1,26 @@
+<dl>
+  <% %i[strength constitution dexterity intelligence wisdom charisma].each do |attr_name| %>
+    <% attribute = page.attributes.find {|attr| attr.attribute == attr_name } %>
+      <dt class="attribute-label" id="<%= attribute.name %>">
+        <%= t("helpers.label.#{resource_name}.#{attribute.name}", default: page.resource.class.human_attribute_name(attribute.name)) %>
+      </dt>
+
+      <dd class="attribute-data attribute-data--<%=attribute.html_class%>">
+        <% stat = page.resource[attr_name] || 0 %>
+        <% race_stat = page.resource.race[attr_name] || 0 %>
+
+        <span class="stat_qqq"><%= stat %></span>
+        <span class="stat_qqq">+</span>
+        <span class="stat_qqq"><%= race_stat %></span>
+        <span class="stat_qqq">=</span>
+        <span class="stat_qqq"><%= stat + race_stat %></span>
+      </dd>
+  <% end %>
+</dl>
+
+<style>
+.stat_qqq{
+  width: 20px;
+  display: inline-block;
+}
+</style>

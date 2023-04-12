@@ -1,5 +1,6 @@
 class Character < ApplicationRecord
   belongs_to :user
+  belongs_to :race
 
   has_many :items
   has_many :skills

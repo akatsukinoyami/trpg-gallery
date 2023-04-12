@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :characters
+    resources :races
     resources :items
     resources :properties
     resources :relatives

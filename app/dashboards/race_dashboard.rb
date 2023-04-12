@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class CharacterDashboard < Administrate::BaseDashboard
+class RaceDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -10,9 +10,8 @@ class CharacterDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
-    age: Field::Number,
-    max_health: Field::Number,
-    max_mana: Field::Number,
+    description: Field::Text,
+    characters: Field::HasMany,
 
     strength: Field::Number,
     constitution: Field::Number,
@@ -21,32 +20,8 @@ class CharacterDashboard < Administrate::BaseDashboard
     wisdom: Field::Number,
     charisma: Field::Number,
 
-    biography: Field::Text,
-    appearance: Field::Text,
-    views: Field::Text,
-
-    relatives: Field::HasMany,
-    items: Field::HasMany,
-    properties: Field::HasMany,
-    skills: Field::HasMany,
-
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-
-    race: Field::BelongsTo.with_options(
-      searchable: true,
-      searchable_fields: ['name'],
-    ),
-    user: Field::BelongsTo.with_options(
-      searchable: true,
-      searchable_fields: ['username'],
-    ),
-    avatar: Field::Carrierwave.with_options(
-      image: :m,
-      multiple: false,
-      remove: false,
-      remote_url: false
-    )
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -55,28 +30,7 @@ class CharacterDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    avatar
     name
-    age
-    race
-    max_health
-    max_mana
-    user
-  ].freeze
-
-  # SHOW_PAGE_ATTRIBUTES
-  # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = %i[
-    user
-    name
-    age
-    race
-    max_health
-    max_mana
-
-    biography
-    appearance
-    views
 
     strength
     constitution
@@ -85,27 +39,33 @@ class CharacterDashboard < Administrate::BaseDashboard
     wisdom
     charisma
 
-    skills
-    items
-    properties
-    relatives
+  ].freeze
 
+  # SHOW_PAGE_ATTRIBUTES
+  # an array of attributes that will be displayed on the model's show page.
+  SHOW_PAGE_ATTRIBUTES = %i[
     id
+    name
+    description
+
+    strength
+    constitution
+    dexterity
+    intelligence
+    wisdom
+    charisma
+
+    characters
     created_at
     updated_at
-    avatar
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    user
     name
-    age
-    race
-    max_health
-    max_mana
+    description
 
     strength
     constitution
@@ -114,16 +74,7 @@ class CharacterDashboard < Administrate::BaseDashboard
     wisdom
     charisma
 
-    biography
-    appearance
-    views
-
-    skills
-    items
-    properties
-    relatives
-
-    avatar
+    characters
   ].freeze
 
   # COLLECTION_FILTERS
@@ -138,10 +89,10 @@ class CharacterDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how characters are displayed
+  # Overwrite this method to customize how races are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource character
-    character.name
-  end
+  # def display_resource(race)
+  #   "Race ##{race.id}"
+  # end
 end

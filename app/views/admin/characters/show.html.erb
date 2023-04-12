@@ -42,13 +42,14 @@ as well as a link to its edit page.
 
 <section class="main-content__body">
   <% tabs = {
-    'main': %i[user name age race max_health max_mana strength constitution dexterity intelligence wisdom charisma avatar created_at updated_at],
+    'main': %i[user name age race max_health max_mana avatar created_at updated_at],
     'detailed': %i[biography appearance views]
   } %>
   <%= render layout: 'layouts/tabs' do %>
     <% tabs.each_with_index do |(tab_name, attributes), i| %>
       <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", checked: i == 0, name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
-        <%= render partial: 'layouts/property_list', locals: { attributes: attributes, page: page } %>
+        <%= render partial: 'layouts/tab_list', locals: { attributes: attributes, page: page } %>
+        <%= render partial: 'layouts/tab_stats', locals: { attr_name: :items, page: page } %>
       <% end %>
     <% end %>
 

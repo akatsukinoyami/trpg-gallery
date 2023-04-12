@@ -1,0 +1,7 @@
+<% attrs = page.attributes.select {|attr| attributes.include?(attr.attribute) } %>
+
+<% attrs.each do |attribute| -%>
+  <div class="field-unit field-unit--<%= attribute.html_class %> field-unit--<%= requireness(attribute) %>">
+    <%= render_field attribute, f: f %>
+  </div>
+<% end -%>

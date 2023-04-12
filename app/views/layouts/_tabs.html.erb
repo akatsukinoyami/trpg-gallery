@@ -1,6 +1,8 @@
-<div class="wrapper">
-  <div class="tabs">
-    <%= yield %>
+<div>
+  <div class="wrapper">
+    <div class="tabs">
+      <%= yield %>
+    </div>
   </div>
 </div>
 
@@ -12,7 +14,7 @@
   .tabs {
     position: relative;
     margin: 20px 0;
-    height: 14.75rem;
+    height: max-content;
   }
   .tabs::before,
   .tabs::after {
