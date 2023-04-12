@@ -25,7 +25,7 @@ class CharacterDashboard < Administrate::BaseDashboard
     appearance: Field::Text,
     views: Field::Text,
 
-    professions: Field::HasMany,
+    professions: Professions,
     relatives: Field::HasMany,
     items: Field::HasMany,
     properties: Field::HasMany,
