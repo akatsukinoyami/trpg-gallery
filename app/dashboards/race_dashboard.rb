@@ -92,7 +92,7 @@ class RaceDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how races are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(race)
-  #   "Race ##{race.id}"
-  # end
+  def display_resource(race)
+    race.name
+  end
 end
