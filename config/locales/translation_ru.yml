@@ -44,7 +44,7 @@ ru:
 
       item:
         name: :activerecord.attributes.title  #g
-        character: :activerecord.models.character  #g
+        character: :activerecord.attributes.character  #g
         cost: Цена  #g
         description: :activerecord.attributes.description   #g
         kind: Тип  #g
@@ -56,7 +56,7 @@ ru:
 
       property:
         name: :activerecord.attributes.title  #g
-        character: :activerecord.models.character  #g
+        character: :activerecord.attributes.character  #g
         cost: Цена  #g
         description: :activerecord.attributes.description   #g
         kind: Тип  #g
@@ -67,12 +67,12 @@ ru:
 
       relative:
         name: :activerecord.attributes.name  #g
-        character: :activerecord.models.character  #g
+        character: :activerecord.attributes.character  #g
         description: :activerecord.attributes.description   #g
 
       skill:
         name: :activerecord.attributes.title  #g
-        character: :activerecord.models.character  #g
+        character: :activerecord.attributes.character  #g
         cost: Расход  #g
         description: :activerecord.attributes.description   #g
         kind: Тип  #g
@@ -83,7 +83,7 @@ ru:
 
       user:
         avatar: :activerecord.attributes.avatar  #g
-        characters: Персонажи  #g
+        characters: :activerecord.models.character  #g
         password: Пароль
         password_confirmation: Подтверждение пароля
         crypted_password: Зашифрованный пароль  #g
@@ -105,15 +105,23 @@ ru:
         name: :activerecord.attributes.title  #g
         description: :activerecord.attributes.description   #g
 
-        character: :activerecord.models.character  #g
+        characters: :activerecord.models.character  #g
         created_at: :activerecord.attributes.character.created_at
         updated_at: :activerecord.attributes.character.updated_at
 
+      profession:
+        title: :activerecord.attributes.title  #g
+        description: :activerecord.attributes.description   #g
+        character: :activerecord.attributes.character
+        level: Уровень
 
-      avatar: Аватар
+
       name: Имя
       title: Название
       description: Описание
+      avatar: Аватар
+      character: Персонаж
+
       strength: Сила  #g
       constitution: Выносливость  #g
       dexterity: Ловкость  #g

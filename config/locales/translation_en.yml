@@ -1,15 +1,15 @@
 en:
   activerecord:
     models:
-      character: Character  #g
-      item: Item  #g
-      relative: Relative  #g
-      property: Property
-      skill: Skill  #g
-      user: User  #g
-      session: Session
-      race: Race
-      profession: Profession
+      character: Characters  #g
+      item: Items  #g
+      relative: Relatives  #g
+      property: Properties
+      skill: Skills  #g
+      user: Players  #g
+      session: Sessions
+      race: Races
+      profession: Professions
 
     attributes:
       character:
@@ -29,47 +29,40 @@ en:
         wisdom: :activerecord.attributes.wisdom  #g
         charisma: :activerecord.attributes.charisma  #g
 
-        items: Items  #g
-        properties: Properties
-        skills: Skills  #g
-        relatives: Relatives  #g
-
-        strength: Strength  #g
-        charisma: Charisma  #g
-        constitution: Constitution  #g
-        dexterity: Dexterity  #g
-        intelligence: Intelligence  #g
-        wisdom: Wisdom  #g
-
+        items: :activerecord.models.item  #g
+        properties: :activerecord.models.property
+        skills: :activerecord.models.skill  #g
+        relatives: :activerecord.models.relative  #g
         profession: :activerecord.models.profession
-        race: :activerecord.models.race  #g
-        user: :activerecord.models.user  #g
+
+        race: Race  #g
+        user: Player  #g
 
         avatar: Avatar  #g
         created_at: Created at
         updated_at: Updated at
 
       item:
-        character: :activerecord.models.character  #g
+        character: :activerecord.attributes.character  #g
         cost: Cost  #g
         description: Description  #g
         kind: Type  #g
         name: Name  #g
 
       property:
-        character: :activerecord.models.character  #g
+        character: :activerecord.attributes.character  #g
         cost: Cost  #g
         description: Description  #g
         kind: Type  #g
         name: Name  #g
 
       relative:
-        character: :activerecord.models.character  #g
+        character: :activerecord.attributes.character  #g
         description: Description  #g
         name: Name  #g
 
       skill:
-        character: :activerecord.models.character  #g
+        character: :activerecord.attributes.character  #g
         cost: Cost  #g
         description: Description  #g
         kind: Type  #g
@@ -104,9 +97,20 @@ en:
         wisdom: :activerecord.attributes.wisdom  #g
         charisma: :activerecord.attributes.charisma  #g
 
-        character: :activerecord.models.character  #g
+        characters: :activerecord.models.character  #g
         created_at: :activerecord.attributes.character.created_at
         updated_at: :activerecord.attributes.character.updated_at
+
+
+      profession:
+        title: :activerecord.attributes.title  #g
+        description: :activerecord.attributes.description   #g
+        character: :activerecord.attributes.character
+        level: Level
+
+      title: Title
+      description: Description
+      character: Character
 
       strength: Strength  #g
       charisma: Charisma  #g

@@ -117,6 +117,11 @@ uk:
         created_at: :activerecord.attributes.character.created_at
         updated_at: :activerecord.attributes.character.updated_at
 
+      profession:
+        title: :activerecord.attributes.title  #g
+        description: :activerecord.attributes.description   #g
+        character: :activerecord.attributes.character
+        level: Рівень
 
       avatar: Аватар
       name: Им'я
