@@ -1,0 +1,11 @@
+<% attribute = page.attributes.find { |a| a.attribute == attr_name } %>
+<h2 class="nya">
+  <%= t("helpers.label.#{resource_name}.#{attribute.name}", default: page.resource.class.human_attribute_name(attribute.name)) %>
+</h2>
+<%= render_field attribute, page: page %>
+
+<style>
+  .nya {
+    padding: 20px;
+  }
+</style>
