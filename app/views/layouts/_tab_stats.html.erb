@@ -9,18 +9,12 @@
         <% stat = page.resource[attr_name] || 0 %>
         <% race_stat = page.resource.race[attr_name] || 0 %>
 
-        <span class="stat_qqq"><%= stat %></span>
-        <span class="stat_qqq">+</span>
-        <span class="stat_qqq"><%= race_stat %></span>
-        <span class="stat_qqq">=</span>
         <span class="stat_qqq"><%= stat + race_stat %></span>
+        (
+        <span class="stat_qqq"><%= stat %></span>
+        <span class="stat_qqq"><%= race_stat.positive? ? '+' : '-' %></span>
+        <span class="stat_qqq"><%= race_stat.abs %></span>
+        )
       </dd>
   <% end %>
 </dl>
-
-<style>
-.stat_qqq{
-  width: 20px;
-  display: inline-block;
-}
-</style>

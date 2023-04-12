@@ -8,29 +8,35 @@ en:
       skill: Skill  #g
       user: User  #g
       session: Session
+      race: Race
 
     attributes:
       character:
+        name: Name  #g
         age: Age  #g
         biography: Biography
         appearance: Appearance
         views: Views
+
+        max_health: Max health  #g
+        max_mana: Max mana  #g
+
+        items: Items  #g
         properties: Properties
-        avatar: Avatar  #g
+        skills: Skills  #g
+        relatives: Relatives  #g
+
+        strength: Strength  #g
         charisma: Charisma  #g
         constitution: Constitution  #g
         dexterity: Dexterity  #g
         intelligence: Intelligence  #g
-        items: Items  #g
-        max_health: Max health  #g
-        max_mana: Max mana  #g
-        name: Name  #g
-        race: Race  #g
-        relatives: Relatives  #g
-        skills: Skills  #g
-        strength: Strength  #g
-        user: :activerecord.models.user  #g
         wisdom: Wisdom  #g
+
+        race: :activerecord.models.race  #g
+        user: :activerecord.models.user  #g
+
+        avatar: Avatar  #g
         created_at: Created at
         updated_at: Updated at
 
@@ -77,6 +83,21 @@ en:
         user: GM
         title: Title
         description: Description  #g
+
+      race:
+        name: Name  #g
+        description: Description  #g
+
+        strength: :activerecord.attributes.character.strength  #g
+        constitution: :activerecord.attributes.character.constitution  #g
+        dexterity: :activerecord.attributes.character.dexterity  #g
+        intelligence: :activerecord.attributes.character.intelligence  #g
+        wisdom: :activerecord.attributes.character.wisdom  #g
+        charisma: :activerecord.attributes.character.charisma  #g
+
+        character: :activerecord.models.character  #g
+        created_at: :activerecord.attributes.character.created_at
+        updated_at: :activerecord.attributes.character.updated_at
 
   tabs:
     main: Main

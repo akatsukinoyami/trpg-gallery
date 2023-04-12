@@ -8,73 +8,79 @@ ru:
       skill: Навык  #g
       user: Пользователь  #g
       session: Сессия
+      race: Раса
 
     attributes:
       character:
+        name: :activerecord.attributes.name  #g
         age: Возраст  #g
         biography: Биография
         appearance: Внешность
         views: Взгляды
+
+        max_health: Макс. здоровье #g
+        max_mana: Макс. мана  #g
+
+        items: Предметы  #g
         properties: Имущество
-        avatar: Аватар  #g
-        charisma: Харизма  #g
-        constitution: Конституция  #g
+        skills: Навыки  #g
+        relatives: Связи  #g
+
+        strength: Сила  #g
+        constitution: Выносливость  #g
         dexterity: Ловкость  #g
         intelligence: Интеллект  #g
-        items: Предметы  #g
-        max_health: Макс. здоровье  #g
-        max_mana: Макс. мана  #g
-        name: Имя  #g
-        race: Раса  #g
-        relatives: Родственники  #g
-        skills: Навыки  #g
-        strength: Сила  #g
-        user: :activerecord.models.user  #g
         wisdom: Мудрость  #g
+        charisma: Харизма  #g
+
+        race: :activerecord.models.race  #g
+        user: :activerecord.models.user  #g
+
+        avatar: :activerecord.attributes.avatar  #g
         created_at: Создано
         updated_at: Обновлено
 
       item:
+        name: :activerecord.attributes.title  #g
         character: :activerecord.models.character  #g
         cost: Цена  #g
-        description: Описание  #g
+        description: :activerecord.attributes.description   #g
         kind: Тип  #g
         kinds:
           money: Деньги
           item: Предмет
           weapon: Оружие
           artifact: Артифакт
-        name: Название  #g
 
       property:
+        name: :activerecord.attributes.title  #g
         character: :activerecord.models.character  #g
         cost: Цена  #g
-        description: Описание  #g
+        description: :activerecord.attributes.description   #g
         kind: Тип  #g
         kinds:
           transport: Транспорт
           real_estate: Недвижимость
           moveable: Переносное
-        name: Название  #g
 
       relative:
+        name: :activerecord.attributes.name  #g
         character: :activerecord.models.character  #g
-        description: Описание  #g
-        name: Имя  #g
+        description: :activerecord.attributes.description   #g
 
       skill:
+        name: :activerecord.attributes.title  #g
         character: :activerecord.models.character  #g
         cost: Расход  #g
-        description: Описание  #g
+        description: :activerecord.attributes.description   #g
         kind: Тип  #g
         kinds:
           race: Расовый
           physical: Физический
           magical: Магический
-        name: Название  #g
 
       user:
-        avatar: Аватар  #g
+        avatar: :activerecord.attributes.avatar  #g
         characters: Персонажи  #g
         password: Пароль
         password_confirmation: Подтверждение пароля
@@ -90,8 +96,29 @@ ru:
 
       session:
         user: ГМ
-        title: Название
-        description: Описание
+        title: :activerecord.attributes.title  #g
+        description: :activerecord.attributes.description   #g
+
+      race:
+        name: :activerecord.attributes.title  #g
+        description: :activerecord.attributes.description   #g
+
+        strength: :activerecord.attributes.character.strength  #g
+        constitution: :activerecord.attributes.character.constitution  #g
+        dexterity: :activerecord.attributes.character.dexterity  #g
+        intelligence: :activerecord.attributes.character.intelligence  #g
+        wisdom: :activerecord.attributes.character.wisdom  #g
+        charisma: :activerecord.attributes.character.charisma  #g
+
+        character: :activerecord.models.character  #g
+        created_at: :activerecord.attributes.character.created_at
+        updated_at: :activerecord.attributes.character.updated_at
+
+
+      avatar: Аватар
+      name: Имя
+      title: Название
+      description: Описание
 
   tabs:
     main: Главная

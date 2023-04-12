@@ -41,32 +41,34 @@ as well as a link to its edit page.
 </header>
 
 <section class="main-content__body">
-  <% tabs = {
-    'main': %i[user name age race max_health max_mana avatar created_at updated_at],
-    'detailed': %i[biography appearance views]
-  } %>
   <%= render layout: 'layouts/tabs' do %>
-    <% tabs.each_with_index do |(tab_name, attributes), i| %>
-      <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", checked: i == 0, name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
-        <%= render partial: 'layouts/tab_list', locals: { attributes: attributes, page: page } %>
-        <%= render partial: 'layouts/tab_stats', locals: { attr_name: :items, page: page } %>
-      <% end %>
+
+    <% tab_name = 'main' %>
+    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", checked: true, name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
+      <%= render partial: 'layouts/tab_list', locals: {  page: page, attributes: %i[user name age race max_health max_mana avatar created_at updated_at] } %>
+      <%= render partial: 'layouts/tab_stats', locals: { page: page } %>
+    <% end %>
+
+    <% tab_name = 'detailed' %>
+    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
+      <%= render partial: 'layouts/tab_list', locals: { attributes: %i[biography appearance views], page: page } %>
     <% end %>
 
     <% tab_name = 'items' %>
-    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", checked: false, name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
+    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
       <%= render partial: 'layouts/tab_special', locals: { attr_name: :items, page: page } %>
       <%= render partial: 'layouts/tab_special', locals: { attr_name: :properties, page: page } %>
     <% end %>
 
     <% tab_name = 'skills' %>
-    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", checked: false, name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
+    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
       <%= render partial: 'layouts/tab_special', locals: { attr_name: :skills, page: page } %>
     <% end %>
 
     <% tab_name = 'relatives' %>
-    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", checked: false, name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
+    <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
       <%= render partial: 'layouts/tab_special', locals: { attr_name: :relatives, page: page } %>
     <% end %>
+
   <% end %>
 </section>

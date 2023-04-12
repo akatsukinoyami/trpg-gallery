@@ -1,5 +1,5 @@
 <div class="tab">
-  <input type="radio" name="<%= radio_name %>" id="<%= id %>" <%= "checked" if checked %> class="tab-switch">
+  <input type="radio" name="<%= radio_name %>" id="<%= id %>" <%= "checked" if (defined? checked) %> class="tab-switch">
   <label for="<%= id %>" class="tab-label"><%= name %></label>
   <div class="tab-content">
     <%= yield %>

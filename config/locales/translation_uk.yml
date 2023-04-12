@@ -8,6 +8,7 @@ uk:
       skill: Навичка  #g
       user: Користувач  #g
       session: Сессія
+      race: Раса
 
     attributes:
       character:
@@ -92,6 +93,28 @@ uk:
         user: ГМ
         title: Назва
         description: Опис  #g
+
+
+      race:
+        name: :activerecord.attributes.title  #g
+        description: :activerecord.attributes.description   #g
+
+        strength: :activerecord.attributes.character.strength  #g
+        constitution: :activerecord.attributes.character.constitution  #g
+        dexterity: :activerecord.attributes.character.dexterity  #g
+        intelligence: :activerecord.attributes.character.intelligence  #g
+        wisdom: :activerecord.attributes.character.wisdom  #g
+        charisma: :activerecord.attributes.character.charisma  #g
+
+        character: :activerecord.models.character  #g
+        created_at: :activerecord.attributes.character.created_at
+        updated_at: :activerecord.attributes.character.updated_at
+
+
+      avatar: Аватар
+      name: Им'я
+      title: Назва
+      description: Опис
 
   tabs:
     main: Головна
