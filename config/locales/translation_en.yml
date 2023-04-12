@@ -9,6 +9,7 @@ en:
       user: User  #g
       session: Session
       race: Race
+      profession: Profession
 
     attributes:
       character:
@@ -20,6 +21,13 @@ en:
 
         max_health: Max health  #g
         max_mana: Max mana  #g
+
+        strength: :activerecord.attributes.strength  #g
+        constitution: :activerecord.attributes.constitution  #g
+        dexterity: :activerecord.attributes.dexterity  #g
+        intelligence: :activerecord.attributes.intelligence  #g
+        wisdom: :activerecord.attributes.wisdom  #g
+        charisma: :activerecord.attributes.charisma  #g
 
         items: Items  #g
         properties: Properties
@@ -33,6 +41,7 @@ en:
         intelligence: Intelligence  #g
         wisdom: Wisdom  #g
 
+        profession: :activerecord.models.profession
         race: :activerecord.models.race  #g
         user: :activerecord.models.user  #g
 
@@ -88,16 +97,23 @@ en:
         name: Name  #g
         description: Description  #g
 
-        strength: :activerecord.attributes.character.strength  #g
-        constitution: :activerecord.attributes.character.constitution  #g
-        dexterity: :activerecord.attributes.character.dexterity  #g
-        intelligence: :activerecord.attributes.character.intelligence  #g
-        wisdom: :activerecord.attributes.character.wisdom  #g
-        charisma: :activerecord.attributes.character.charisma  #g
+        strength: :activerecord.attributes.strength  #g
+        constitution: :activerecord.attributes.constitution  #g
+        dexterity: :activerecord.attributes.dexterity  #g
+        intelligence: :activerecord.attributes.intelligence  #g
+        wisdom: :activerecord.attributes.wisdom  #g
+        charisma: :activerecord.attributes.charisma  #g
 
         character: :activerecord.models.character  #g
         created_at: :activerecord.attributes.character.created_at
         updated_at: :activerecord.attributes.character.updated_at
+
+      strength: Strength  #g
+      charisma: Charisma  #g
+      constitution: Constitution  #g
+      dexterity: Dexterity  #g
+      intelligence: Intelligence  #g
+      wisdom: Wisdom  #g
 
   tabs:
     main: Main

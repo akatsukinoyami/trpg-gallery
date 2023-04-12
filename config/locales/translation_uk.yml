@@ -1,78 +1,86 @@
 uk:
   activerecord:
     models:
-      character: Персонаж  #g
-      item: Предмет  #g
-      relative: Відносна  #g
+      character: Персонажі  #g
+      item: Предмети  #g
+      relative: Зв'язки  #g
       property: Майно
-      skill: Навичка  #g
-      user: Користувач  #g
-      session: Сессія
-      race: Раса
+      skill: Навички  #g
+      user: Гравці  #g
+      session: Сессії
+      race: Раси
+      profession: Професії
 
     attributes:
       character:
+        name: :activerecord.attributes.name  #g
         age: Вік  #g
+        avatar: Аватар  #g
+
         biography: Біографія
         appearance: Зовнішність
         views: Погляди
-        properties: Майно
-        avatar: Аватар  #g
-        charisma: Харизма  #g
-        constitution: Конституція  #g
-        dexterity: Спритність  #g
-        intelligence: Інтелект  #g
-        items: Предмети  #g
+
         max_health: Макс здоров'я  #g
         max_mana: Макс мани  #g
-        name: Ім'я  #g
+
+        strength: :activerecord.attributes.strength  #g
+        constitution: :activerecord.attributes.constitution  #g
+        dexterity: :activerecord.attributes.dexterity  #g
+        intelligence: :activerecord.attributes.intelligence  #g
+        wisdom: :activerecord.attributes.wisdom  #g
+        charisma: :activerecord.attributes.charisma  #g
+
+        items: :activerecord.models.item  #g
+        properties: :activerecord.models.property
+        skills: :activerecord.models.skill  #g
+        relatives: :activerecord.models.relative  #g
+        professions: :activerecord.models.profession
+
         race: Раса  #g
-        relatives: Зв'язки  #g
-        skills: Навички  #g
-        strength: Сила  #g
         user: :activerecord.models.user  #g
-        wisdom: Мудрість  #g
+
         created_at: Створено
         updated_at: Оновлено
 
       item:
         character: :activerecord.models.character  #g
         cost: Вартість  #g
-        description: Опис  #g
+        description: :activerecord.attributes.description  #g
         kind: Тип  #g
         kinds:
           money: Гроші
           item: Предмет
           weapon: Зброя
           artifact: Артифакт
-        name: Назва  #g
+        name: :activerecord.attributes.title  #g
 
       property:
         character: :activerecord.models.character  #g
         cost: Вартість  #g
-        description: Опис  #g
+        description: :activerecord.attributes.description  #g
         kind: Тип  #g
         kinds:
           transport: Транспорт
           real_estate: Нерухомість
           moveable: Переносне
-        name: Назва  #g
+        name: :activerecord.attributes.title  #g
 
       relative:
         character: :activerecord.models.character  #g
-        description: опис  #g
-        name: Ім'я  #g
+        description: :activerecord.attributes.description  #g
+        name: :activerecord.attributes.name  #g
 
       skill:
         character: :activerecord.models.character  #g
         cost: Вартість  #g
-        description: Опис  #g
+        description: :activerecord.attributes.description  #g
         kind: Тип  #g
         kinds:
           race: Расовий
           physical: Физичний
           magical: Магічний
-        name: Назва  #g
+        name: :activerecord.attributes.title  #g
 
       user:
         avatar: Аватар  #g
@@ -91,20 +99,19 @@ uk:
 
       sessions:
         user: ГМ
-        title: Назва
-        description: Опис  #g
-
+        title: :activerecord.attributes.title
+        description: :activerecord.attributes.description  #g
 
       race:
         name: :activerecord.attributes.title  #g
         description: :activerecord.attributes.description   #g
 
-        strength: :activerecord.attributes.character.strength  #g
-        constitution: :activerecord.attributes.character.constitution  #g
-        dexterity: :activerecord.attributes.character.dexterity  #g
-        intelligence: :activerecord.attributes.character.intelligence  #g
-        wisdom: :activerecord.attributes.character.wisdom  #g
-        charisma: :activerecord.attributes.character.charisma  #g
+        strength: :activerecord.attributes.strength  #g
+        constitution: :activerecord.attributes.constitution  #g
+        dexterity: :activerecord.attributes.dexterity  #g
+        intelligence: :activerecord.attributes.intelligence  #g
+        wisdom: :activerecord.attributes.wisdom  #g
+        charisma: :activerecord.attributes.charisma  #g
 
         character: :activerecord.models.character  #g
         created_at: :activerecord.attributes.character.created_at
@@ -115,6 +122,13 @@ uk:
       name: Им'я
       title: Назва
       description: Опис
+
+      strength: Сила  #g
+      constitution: Витривалість  #g
+      dexterity: Спритність  #g
+      intelligence: Інтелект  #g
+      wisdom: Мудрість  #g
+      charisma: Харизма  #g
 
   tabs:
     main: Головна

@@ -35,7 +35,7 @@ and renders all form fields for a resource's editable attributes.
 
   <%= render layout: 'layouts/tabs' do %>
     <% {
-      'main': %i[user name age race max_health max_mana strength constitution dexterity intelligence wisdom charisma avatar created_at updated_at],
+      'main': %i[user name age race max_health max_mana professions strength constitution dexterity intelligence wisdom charisma avatar],
       'detailed': %i[biography appearance views]
     }.each_with_index do |(tab_name, attributes), i| %>
       <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", checked: i == 0, name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>

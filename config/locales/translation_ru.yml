@@ -1,14 +1,15 @@
 ru:
   activerecord:
     models:
-      character: Персонаж  #g
-      item: Предмет  #g
-      relative: Связь  #g
+      character: Персонажи  #g
+      item: Предметы  #g
+      relative: Связи  #g
       property: Имущество
-      skill: Навык  #g
-      user: Пользователь  #g
-      session: Сессия
-      race: Раса
+      skill: Навыки  #g
+      user: Игроки  #g
+      session: Сессии
+      race: Расы
+      profession: Профессии
 
     attributes:
       character:
@@ -21,20 +22,21 @@ ru:
         max_health: Макс. здоровье #g
         max_mana: Макс. мана  #g
 
-        items: Предметы  #g
-        properties: Имущество
-        skills: Навыки  #g
-        relatives: Связи  #g
+        strength: :activerecord.attributes.strength  #g
+        constitution: :activerecord.attributes.constitution  #g
+        dexterity: :activerecord.attributes.dexterity  #g
+        intelligence: :activerecord.attributes.intelligence  #g
+        wisdom: :activerecord.attributes.wisdom  #g
+        charisma: :activerecord.attributes.charisma  #g
 
-        strength: Сила  #g
-        constitution: Выносливость  #g
-        dexterity: Ловкость  #g
-        intelligence: Интеллект  #g
-        wisdom: Мудрость  #g
-        charisma: Харизма  #g
+        items: :activerecord.models.item  #g
+        properties: :activerecord.models.property
+        skills: :activerecord.models.skill  #g
+        relatives: :activerecord.models.relative  #g
+        professions: :activerecord.models.profession
 
-        race: :activerecord.models.race  #g
-        user: :activerecord.models.user  #g
+        race: Расы  #g
+        user: Игрок  #g
 
         avatar: :activerecord.attributes.avatar  #g
         created_at: Создано
@@ -103,13 +105,6 @@ ru:
         name: :activerecord.attributes.title  #g
         description: :activerecord.attributes.description   #g
 
-        strength: :activerecord.attributes.character.strength  #g
-        constitution: :activerecord.attributes.character.constitution  #g
-        dexterity: :activerecord.attributes.character.dexterity  #g
-        intelligence: :activerecord.attributes.character.intelligence  #g
-        wisdom: :activerecord.attributes.character.wisdom  #g
-        charisma: :activerecord.attributes.character.charisma  #g
-
         character: :activerecord.models.character  #g
         created_at: :activerecord.attributes.character.created_at
         updated_at: :activerecord.attributes.character.updated_at
@@ -119,6 +114,12 @@ ru:
       name: Имя
       title: Название
       description: Описание
+      strength: Сила  #g
+      constitution: Выносливость  #g
+      dexterity: Ловкость  #g
+      intelligence: Интеллект  #g
+      wisdom: Мудрость  #g
+      charisma: Харизма  #g
 
   tabs:
     main: Главная

@@ -42,10 +42,9 @@ as well as a link to its edit page.
 
 <section class="main-content__body">
   <%= render layout: 'layouts/tabs' do %>
-
     <% tab_name = 'main' %>
     <%= render layout: 'layouts/tab', locals: { id: "#{tab_name}_tab", checked: true, name: I18n.t("tabs.#{tab_name}"), radio_name: 'radio_name' } do %>
-      <%= render partial: 'layouts/tab_list', locals: {  page: page, attributes: %i[user name age race max_health max_mana avatar created_at updated_at] } %>
+      <%= render partial: 'layouts/tab_list', locals: {  page: page, attributes: %i[user name age race max_health max_mana avatar professions created_at updated_at] } %>
       <%= render partial: 'layouts/tab_stats', locals: { page: page } %>
     <% end %>
 

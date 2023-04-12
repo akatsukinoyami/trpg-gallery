@@ -25,6 +25,7 @@ class CharacterDashboard < Administrate::BaseDashboard
     appearance: Field::Text,
     views: Field::Text,
 
+    professions: Field::HasMany,
     relatives: Field::HasMany,
     items: Field::HasMany,
     properties: Field::HasMany,
@@ -85,6 +86,7 @@ class CharacterDashboard < Administrate::BaseDashboard
     wisdom
     charisma
 
+    professions
     skills
     items
     properties
@@ -118,6 +120,7 @@ class CharacterDashboard < Administrate::BaseDashboard
     appearance
     views
 
+    professions
     skills
     items
     properties
